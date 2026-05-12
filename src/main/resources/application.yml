@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: 'webOrders'
+
+  profiles:
+    active: dev

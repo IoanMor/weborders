@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Автоматизация бизнеса</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1180px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        header {
+            padding: 28px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(10px);
+            background: rgba(15, 23, 42, 0.85);
+            z-index: 100;
+        }
+
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            color: #38bdf8;
+        }
+
+        .hero {
+            padding: 100px 0 80px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 60px;
+            align-items: center;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border-radius: 999px;
+            background: rgba(56, 189, 248, 0.12);
+            color: #38bdf8;
+            font-size: 14px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(56, 189, 248, 0.25);
+        }
+
+        h1 {
+            font-size: 52px;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 14px 24px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: 0.2s ease;
+            display: inline-block;
+        }
+
+        .btn-primary {
+            background: #38bdf8;
+            color: #0f172a;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: #67d3ff;
+        }
+
+        .btn-secondary {
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            color: #fff;
+        }
+
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .card {
+            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 28px;
+            padding: 34px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+        }
+
+        .card h3 {
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .card ul {
+            list-style: none;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .card li {
+            color: #cbd5e1;
+            padding-left: 30px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #38bdf8;
+            font-weight: bold;
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+            margin-bottom: 16px;
+        }
+
+        .section-title p {
+            color: #94a3b8;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 24px;
+        }
+
+        .service {
+            background: rgba(15, 23, 42, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 22px;
+            padding: 28px;
+            transition: 0.2s ease;
+        }
+
+        .service:hover {
+            transform: translateY(-4px);
+            border-color: rgba(56, 189, 248, 0.35);
+        }
+
+        .service h3 {
+            margin-bottom: 14px;
+            font-size: 22px;
+        }
+
+        .service p {
+            color: #cbd5e1;
+            font-size: 15px;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+        }
+
+        .step {
+            background: rgba(15, 23, 42, 0.9);
+            border-radius: 22px;
+            padding: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .step-number {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #38bdf8;
+            color: #0f172a;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            margin-bottom: 18px;
+        }
+
+        .cta {
+            text-align: center;
+            background: linear-gradient(145deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.95));
+            border: 1px solid rgba(56, 189, 248, 0.2);
+            border-radius: 32px;
+            padding: 60px 30px;
+
+        }
+
+        .cta h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .cta p {
+            max-width: 720px;
+            margin: 0 auto 30px;
+            color: #cbd5e1;
+        }
+
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            color: #64748b;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2,
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+        }
+
+        .qr-block {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .qr-block img {
+            border-radius: 20px;
+            background: white;
+            padding: 10px;
+        }
+
+        .qr-block p {
+            margin-top: 12px;
+            color: #cbd5e1;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="container header-inner">
+        <div class="logo">Automation Systems</div>
+        <a href="#contact" class="btn btn-secondary">Связаться</a>
+    </div>
+</header>
+
+<section class="hero">
+    <div class="container hero-grid">
+        <div>
+            <div class="badge">Автоматизация малого бизнеса</div>
+            <h1>Убираю рутину и сокращаю ручную работу</h1>
+            <p>
+                Разрабатываю Telegram-ботов, небольшие веб-приложения и системы автоматизации
+                для бизнеса без сложных CRM и перегруженных решений.
+            </p>
+
+            <div class="buttons">
+                <a href="#services" class="btn btn-primary">Посмотреть услуги</a>
+                <a href="#contact" class="btn btn-secondary">Обсудить задачу</a>
+            </div>
+        </div>
+
+        <div class="card">
+            <h3>Что можно автоматизировать</h3>
+            <ul>
+                <li>Сбор заявок в таблицу</li>
+                <li>Уведомления клиентам и сотрудникам</li>
+                <li>Обработку Excel и PDF файлов</li>
+                <li>Запись клиентов через сайт или Telegram</li>
+                <li>Хранение заказов и данных в одном месте</li>
+                <li>Повторяющиеся ручные действия сотрудников</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<section id="services">
+    <div class="container">
+        <div class="section-title">
+            <h2>Услуги</h2>
+            <p>
+                Простые решения под конкретные задачи бизнеса.
+                Без перегруженных корпоративных систем.
+            </p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service">
+                <h3>Telegram-боты</h3>
+                <p>
+                    Боты для записи клиентов, приема заявок, уведомлений и автоматизации общения.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Веб-приложения</h3>
+                <p>
+                    Небольшие внутренние сервисы и панели управления для бизнеса.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Автоматизация Excel/PDF</h3>
+                <p>
+                    Автоматический перенос, обработка и структурирование данных.
+                </p>
+            </div>
+
+            <div class="service">
+                <h3>Уведомления</h3>
+                <p>
+                    Email и Telegram уведомления для клиентов, менеджеров и сотрудников.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="section-title">
+            <h2>Как проходит работа</h2>
+            <p>
+                Простая и понятная схема без сложной технической терминологии.
+            </p>
+        </div>
+
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Обсуждение задачи</h3>
+                <p>
+                    Вы описываете проблему и текущий процесс работы.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Предлагаю решение</h3>
+                <p>
+                    Объясняю простым языком, как можно убрать рутину.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Разработка</h3>
+                <p>
+                    Создаю рабочий инструмент под конкретную задачу.
+                </p>
+            </div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <h3>Запуск</h3>
+                <p>
+                    Передаю доступы, инструкции и помогаю с запуском.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="container">
+        <div class="cta" id="contact">
+            <h2>Обсудим вашу задачу</h2>
+            <p>
+                Если у вас много ручной работы, таблиц, сообщений и повторяющихся действий —
+                можно упростить процесс с помощью небольшой автоматизации.
+            </p>
+
+            <a href="https://t.me/LordIoan" class="btn btn-primary">
+                Написать в Telegram
+            </a>
+            <div class="qr-block">
+                <img src="/image/qr.png" alt="Telegram QR" width="180">
+                <p>Сканируйте QR-код для связи в Telegram</p>
+            </div>
+            <a th:href="@{/view/services/request/new}" class="btn btn-primary">
+                Оставить заявку на сайте
+            </a>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="container">
+        © 2026 Иван Морозов. Небольшие системы автоматизации для бизнеса.
+    </div>
+</footer>
+
+</body>
+</html>

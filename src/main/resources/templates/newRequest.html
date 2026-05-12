@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заявка</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Inter, sans-serif;
+            background: #0f172a;
+            color: #f8fafc;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        .card {
+            background: rgba(30, 41, 59, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 24px;
+            padding: 32px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+        }
+
+        h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #cbd5e1;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 6px;
+            margin-top: 18px;
+            color: #cbd5e1;
+            font-size: 14px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 12px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #0f172a;
+            color: #f8fafc;
+            outline: none;
+        }
+
+        textarea {
+            min-height: 120px;
+            resize: vertical;
+        }
+
+        button {
+            margin-top: 24px;
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 14px;
+            background: #38bdf8;
+            color: #0f172a;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        button:hover {
+            background: #67d3ff;
+        }
+
+        .hint {
+            font-size: 13px;
+            color: #94a3b8;
+            margin-top: 12px;
+        }
+        .checkbox label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: #cbd5e1;
+        }
+
+        .checkbox input[type="checkbox"] {
+            width: 16px;
+            height: 16px;
+            margin: 0;
+            accent-color: #38bdf8;
+        }
+    </style>
+</head>
+<body>
+
+
+
+<div class="container">
+    <div class="card">
+
+        <h1>Оставить заявку</h1>
+        <p>Опишите задачу — я предложу простое решение для автоматизации.</p>
+
+        <div th:if="${success}" style="
+    background: rgba(56, 189, 248, 0.1);
+    border: 1px solid #38bdf8;
+    border-radius: 12px;
+    padding: 14px;
+    margin-bottom: 20px;
+    color: #38bdf8;
+    font-size: 14px;">
+            ✓ <span th:text="${success}"></span>
+        </div>
+
+        <form th:action="@{/view/services/request/new/add}" method="post">
+
+            <label>Имя</label>
+            <input type="text" name="name" placeholder="Ваше имя" required>
+
+            <label>Номер телефона</label>
+            <input type="text" name="tNumber" placeholder="+7..." required>
+
+            <label>Описание проекта</label>
+            <textarea name="description" placeholder="Опишите свою идею" required></textarea>
+
+            <div class="checkbox">
+                <label>
+                    <input type="checkbox" required>
+                    Я принимаю условия
+                    <a th:href="@{/view/services/privacy}" target="_blank">Политики обработки персональных данных</a>
+                </label>
+            </div>
+
+            <button type="submit">Отправить заявку</button>
+
+        </form>
+
+        <div class="hint">
+            Нажимая кнопку, вы отправляете заявку на обработк.
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
