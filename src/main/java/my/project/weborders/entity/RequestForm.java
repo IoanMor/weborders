@@ -1,10 +1,8 @@
 package my.project.weborders.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
+import my.project.weborders.util.StatusEnum;
 
 @Entity
 @Table(name = "Forms")
@@ -12,6 +10,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class RequestForm {
 
     @Id
@@ -23,5 +22,8 @@ public class RequestForm {
     private String tNumber;
     @Column(name = "description")
     private String description;
+    @Column(name = "status")
+    @Enumerated(value = EnumType.STRING)
+    @Builder.Default  private StatusEnum status = StatusEnum.RECEIVED;
 
 }

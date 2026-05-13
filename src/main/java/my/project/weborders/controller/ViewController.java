@@ -3,6 +3,7 @@ package my.project.weborders.controller;
 import my.project.weborders.dto.RequestFormDTO;
 import my.project.weborders.repository.RequestFormRepository;
 import my.project.weborders.util.Mapper;
+import my.project.weborders.util.StatusEnum;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -38,7 +39,7 @@ public class ViewController {
     @PostMapping("/request/new/add")
     public String addRequest(@RequestParam String name, @RequestParam String tNumber, @RequestParam String description, RedirectAttributes redirectAttributes) {
         System.out.println(">>> ЗАПРОС ПОЛУЧЕН: " + name + " / " + tNumber);
-        formRepository.save(Mapper.formDTOtoEntity(new RequestFormDTO(name,tNumber,description)));
+        formRepository.save(Mapper.formDTOtoEntity(new RequestFormDTO(name, tNumber, description,null),true));
         redirectAttributes.addFlashAttribute("success", "Заявка успешно отправлена!");
         return "redirect:/view/services/request/new";
     }
