@@ -3,11 +3,15 @@
 <head>
     <meta charset="UTF-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Автоматизация бизнеса</title>
+    <title>Разработка сайтов и автоматизация бизнеса</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+          rel="stylesheet">
+
     <style>
+
         * {
             margin: 0;
             padding: 0;
@@ -29,12 +33,12 @@
         }
 
         header {
-            padding: 28px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
             position: sticky;
             top: 0;
             backdrop-filter: blur(10px);
-            background: rgba(15, 23, 42, 0.85);
+            background: rgba(15,23,42,0.85);
             z-index: 100;
         }
 
@@ -65,11 +69,11 @@
             display: inline-block;
             padding: 8px 14px;
             border-radius: 999px;
-            background: rgba(56, 189, 248, 0.12);
+            background: rgba(56,189,248,0.12);
             color: #38bdf8;
             font-size: 14px;
             margin-bottom: 20px;
-            border: 1px solid rgba(56, 189, 248, 0.25);
+            border: 1px solid rgba(56,189,248,0.25);
         }
 
         h1 {
@@ -110,20 +114,24 @@
         }
 
         .btn-secondary {
-            border: 1px solid rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255,255,255,0.15);
             color: #fff;
         }
 
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.05);
+            background: rgba(255,255,255,0.05);
         }
 
         .card {
-            background: linear-gradient(145deg, rgba(30, 41, 59, 0.95), rgba(15, 23, 42, 0.95));
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: linear-gradient(
+                    145deg,
+                    rgba(30,41,59,0.95),
+                    rgba(15,23,42,0.95)
+            );
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 28px;
             padding: 34px;
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.35);
         }
 
         .card h3 {
@@ -179,8 +187,8 @@
         }
 
         .service {
-            background: rgba(15, 23, 42, 0.9);
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(15,23,42,0.9);
+            border: 1px solid rgba(255,255,255,0.08);
             border-radius: 22px;
             padding: 28px;
             transition: 0.2s ease;
@@ -188,7 +196,7 @@
 
         .service:hover {
             transform: translateY(-4px);
-            border-color: rgba(56, 189, 248, 0.35);
+            border-color: rgba(56,189,248,0.35);
         }
 
         .service h3 {
@@ -199,6 +207,13 @@
         .service p {
             color: #cbd5e1;
             font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        .price {
+            color: #38bdf8;
+            font-weight: 700;
+            font-size: 18px;
         }
 
         .steps {
@@ -208,10 +223,10 @@
         }
 
         .step {
-            background: rgba(15, 23, 42, 0.9);
+            background: rgba(15,23,42,0.9);
             border-radius: 22px;
             padding: 28px;
-            border: 1px solid rgba(255, 255, 255, 0.08);
+            border: 1px solid rgba(255,255,255,0.08);
         }
 
         .step-number {
@@ -229,11 +244,14 @@
 
         .cta {
             text-align: center;
-            background: linear-gradient(145deg, rgba(56, 189, 248, 0.12), rgba(15, 23, 42, 0.95));
-            border: 1px solid rgba(56, 189, 248, 0.2);
+            background: linear-gradient(
+                    145deg,
+                    rgba(56,189,248,0.12),
+                    rgba(15,23,42,0.95)
+            );
+            border: 1px solid rgba(56,189,248,0.2);
             border-radius: 32px;
             padding: 60px 30px;
-
         }
 
         .cta h2 {
@@ -247,6 +265,11 @@
             color: #cbd5e1;
         }
 
+        .about-text {
+            color: #cbd5e1;
+            margin-bottom: 18px;
+        }
+
         footer {
             padding: 40px 0;
             text-align: center;
@@ -254,23 +277,8 @@
             font-size: 14px;
         }
 
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 38px;
-            }
-
-            .section-title h2,
-            .cta h2 {
-                font-size: 30px;
-            }
-
-            .hero {
-                padding-top: 70px;
-            }
-        }
-
         .qr-block {
-            margin-top: 30px;
+            margin-top: 35px;
             text-align: center;
         }
 
@@ -284,35 +292,79 @@
             margin-top: 12px;
             color: #cbd5e1;
         }
+
+        @media (max-width: 768px) {
+
+            h1 {
+                font-size: 38px;
+            }
+
+            .section-title h2,
+            .cta h2 {
+                font-size: 30px;
+            }
+
+            .hero {
+                padding-top: 70px;
+            }
+
+        }
+
     </style>
 </head>
+
 <body>
 
 <header>
     <div class="container header-inner">
-        <div class="logo">Automation Systems</div>
-        <a href="#contact" class="btn btn-secondary">Связаться</a>
+        <div class="logo">Ivan Morozov</div>
+
+        <a href="#contact" class="btn btn-secondary">
+            Связаться
+        </a>
     </div>
 </header>
 
 <section class="hero">
+
     <div class="container hero-grid">
+
         <div>
-            <div class="badge">Автоматизация малого бизнеса</div>
-            <h1>Убираю рутину и сокращаю ручную работу</h1>
+
+            <div class="badge">
+                Сайты и автоматизация бизнеса
+            </div>
+
+            <h1>
+                Создаю сайты, Telegram-ботов и веб-приложения для малого бизнеса
+            </h1>
+
             <p>
-                Разрабатываю Telegram-ботов, небольшие веб-приложения и системы автоматизации
-                для бизнеса без сложных CRM и перегруженных решений.
+                Помогаю автоматизировать заявки, уведомления,
+                обработку данных и работу с клиентами.
+                Разрабатываю простые и понятные решения без сложных CRM-систем.
             </p>
 
             <div class="buttons">
-                <a href="#services" class="btn btn-primary">Посмотреть услуги</a>
-                <a href="#contact" class="btn btn-secondary">Обсудить задачу</a>
+
+                <a href="#services" class="btn btn-primary">
+                    Посмотреть услуги
+                </a>
+
+                <a href="#contact" class="btn btn-secondary">
+                    Обсудить задачу
+                </a>
+
             </div>
+
         </div>
 
         <div class="card">
-            <h3>Что можно автоматизировать</h3>
+
+            <h3>
+                Что можно автоматизировать
+            </h3>
+
             <ul>
                 <li>Сбор заявок в таблицу</li>
                 <li>Уведомления клиентам и сотрудникам</li>
@@ -321,124 +373,351 @@
                 <li>Хранение заказов и данных в одном месте</li>
                 <li>Повторяющиеся ручные действия сотрудников</li>
             </ul>
+
         </div>
+
     </div>
+
 </section>
 
 <section id="services">
+
     <div class="container">
+
         <div class="section-title">
-            <h2>Услуги</h2>
+
+            <h2>
+                Услуги
+            </h2>
+
             <p>
                 Простые решения под конкретные задачи бизнеса.
-                Без перегруженных корпоративных систем.
             </p>
+
         </div>
 
         <div class="services-grid">
+
             <div class="service">
-                <h3>Telegram-боты</h3>
+
+                <h3>
+                    Сайт-визитка
+                </h3>
+
                 <p>
-                    Боты для записи клиентов, приема заявок, уведомлений и автоматизации общения.
+                    Одностраничный сайт для услуг, мастеров и малого бизнеса.
                 </p>
+
+                <div class="price">
+                    от 2 000 ₽
+                </div>
+
             </div>
 
             <div class="service">
-                <h3>Веб-приложения</h3>
+
+                <h3>
+                    Telegram-бот
+                </h3>
+
                 <p>
-                    Небольшие внутренние сервисы и панели управления для бизнеса.
+                    Бот для записи клиентов, заявок и уведомлений.
                 </p>
+
+                <div class="price">
+                    от 3 000 ₽
+                </div>
+
             </div>
 
             <div class="service">
-                <h3>Автоматизация Excel/PDF</h3>
+
+                <h3>
+                    Веб-приложение
+                </h3>
+
                 <p>
-                    Автоматический перенос, обработка и структурирование данных.
+                    Система для работы с клиентами, заказами и заявками.
                 </p>
+
+                <div class="price">
+                    от 5 000 ₽
+                </div>
+
             </div>
 
             <div class="service">
-                <h3>Уведомления</h3>
+
+                <h3>
+                    Автоматизация Excel/PDF
+                </h3>
+
                 <p>
-                    Email и Telegram уведомления для клиентов, менеджеров и сотрудников.
+                    Автоматическая обработка и перенос данных без ручной работы.
                 </p>
+
+                <div class="price">
+                    от 2 000 ₽
+                </div>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 <section>
+
     <div class="container">
+
         <div class="section-title">
-            <h2>Как проходит работа</h2>
+
+            <h2>
+                Примеры решений
+            </h2>
+
             <p>
-                Простая и понятная схема без сложной технической терминологии.
+                Небольшие системы под задачи бизнеса.
             </p>
+
+        </div>
+
+        <div class="services-grid">
+
+            <div class="service">
+
+                <h3>
+                    Система приёма заявок
+                </h3>
+
+                <p>
+                    Веб-форма с автоматическим сохранением заявок.
+                </p>
+
+            </div>
+
+            <div class="service">
+
+                <h3>
+                    Бот для записи клиентов
+                </h3>
+
+                <p>
+                    Онлайн-запись через Telegram без ручной переписки.
+                </p>
+
+            </div>
+
+            <div class="service">
+
+                <h3>
+                    Панель управления заказами
+                </h3>
+
+                <p>
+                    Веб-приложение для хранения клиентов и заказов.
+                </p>
+
+            </div>
+
+            <div class="service">
+
+                <h3>
+                    Автоматизация Excel
+                </h3>
+
+                <p>
+                    Перенос данных из таблиц и PDF в удобный формат.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <div class="section-title">
+
+            <h2>
+                Как проходит работа
+            </h2>
+
+            <p>
+                Простая схема без сложных технических терминов.
+            </p>
+
         </div>
 
         <div class="steps">
+
             <div class="step">
-                <div class="step-number">1</div>
-                <h3>Обсуждение задачи</h3>
+
+                <div class="step-number">
+                    1
+                </div>
+
+                <h3>
+                    Обсуждение задачи
+                </h3>
+
                 <p>
                     Вы описываете проблему и текущий процесс работы.
                 </p>
+
             </div>
 
             <div class="step">
-                <div class="step-number">2</div>
-                <h3>Предлагаю решение</h3>
+
+                <div class="step-number">
+                    2
+                </div>
+
+                <h3>
+                    Предлагаю решение
+                </h3>
+
                 <p>
-                    Объясняю простым языком, как можно убрать рутину.
+                    Объясняю простым языком, как можно упростить работу.
                 </p>
+
             </div>
 
             <div class="step">
-                <div class="step-number">3</div>
-                <h3>Разработка</h3>
+
+                <div class="step-number">
+                    3
+                </div>
+
+                <h3>
+                    Разработка
+                </h3>
+
                 <p>
                     Создаю рабочий инструмент под конкретную задачу.
                 </p>
+
             </div>
 
             <div class="step">
-                <div class="step-number">4</div>
-                <h3>Запуск</h3>
+
+                <div class="step-number">
+                    4
+                </div>
+
+                <h3>
+                    Запуск
+                </h3>
+
                 <p>
-                    Передаю доступы, инструкции и помогаю с запуском.
+                    Передаю доступы и помогаю с запуском.
                 </p>
+
             </div>
+
         </div>
+
     </div>
+
 </section>
 
 <section>
+
     <div class="container">
-        <div class="cta" id="contact">
-            <h2>Обсудим вашу задачу</h2>
-            <p>
-                Если у вас много ручной работы, таблиц, сообщений и повторяющихся действий —
-                можно упростить процесс с помощью небольшой автоматизации.
+
+        <div class="section-title">
+
+            <h2>
+                Обо мне
+            </h2>
+
+        </div>
+
+        <div class="card">
+
+            <p class="about-text">
+                Меня зовут Иван Морозов.
+                Занимаюсь разработкой сайтов,
+                Telegram-ботов и небольших систем автоматизации.
             </p>
 
-            <a href="https://t.me/LordIoan" class="btn btn-primary">
+            <p class="about-text">
+                Работаю с Java, Spring Boot, PostgreSQL и веб-приложениями.
+                Помогаю сократить рутинную работу и сделать процессы удобнее.
+            </p>
+
+            <p class="about-text">
+                Работаю удалённо по всей России.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section>
+
+    <div class="container">
+
+        <div class="cta" id="contact">
+
+            <h2>
+                Обсудим вашу задачу
+            </h2>
+
+            <p>
+                Если у вас много ручной работы,
+                таблиц и повторяющихся действий —
+                можно упростить процесс с помощью автоматизации.
+            </p>
+
+            <a href="https://t.me/LordIoan"
+               class="btn btn-primary">
                 Написать в Telegram
             </a>
+
             <div class="qr-block">
-                <img src="/image/qr.png" alt="Telegram QR" width="180">
-                <p>Сканируйте QR-код для связи в Telegram</p>
+
+                <img src="/image/qr.png"
+                     alt="Telegram QR"
+                     width="180">
+
+                <p>
+                    Сканируйте QR-код для связи в Telegram
+                </p>
+
             </div>
-            <a th:href="@{/view/services/request/new}" class="btn btn-primary">
-                Оставить заявку на сайте
+
+            <p style="margin-top: 30px;">
+                Или оставьте заявку через форму сайта
+            </p>
+
+            <a th:href="@{/view/services/request/new}"
+               class="btn btn-secondary">
+                Оставить заявку
             </a>
+
         </div>
+
     </div>
+
 </section>
 
 <footer>
+
     <div class="container">
-        © 2026 Иван Морозов. Небольшие системы автоматизации для бизнеса.
+        © 2026 Иван Морозов.
+        Разработка сайтов и автоматизация бизнеса.
     </div>
+
 </footer>
 
 </body>
