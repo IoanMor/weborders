@@ -2,6 +2,7 @@ package my.project.weborders.util;
 
 public final class NormalizeData {
     public static String normalizePhone(String rawPhone) {
+
         String digits = rawPhone.replaceAll("[^0-9]", "");
 
         if (digits.isEmpty()) return rawPhone;
